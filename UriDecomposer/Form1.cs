@@ -31,7 +31,7 @@ namespace UriDecomposer
                 var parameters = Utility.DecomposeQueryParameters(query, true);
                 TxtResult.Clear();
                 var sb = new StringBuilder();
-                parameters.Select(kv => $"{kv.Key}: {kv.Value}").ToList().ForEach(p => sb.AppendLine(p));
+                parameters.Select(kv => $"{kv.Key}: {kv.Value}").ToList().ForEach(p => sb.AppendLine(p).AppendLine());
                 TxtResult.Text = sb.ToString();
             }
             catch (Exception ex)
